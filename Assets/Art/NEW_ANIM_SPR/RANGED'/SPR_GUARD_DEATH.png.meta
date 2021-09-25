@@ -1,46 +1,70 @@
 fileFormatVersion: 2
-guid: 8feee223331e8d54181f02579dadf7dc
+guid: 44b5a54ab08a51f4aacbb4a28f2ef428
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5264582208018037078
-    second: SPR_ZMB_DEATH_RIGHT_0
+      213: 3231996984918002019
+    second: SPR_GUARD_DEATH_0
   - first:
-      213: -2137256682024015968
-    second: SPR_ZMB_DEATH_RIGHT_1
+      213: -2100963820825771535
+    second: SPR_GUARD_DEATH_1
   - first:
-      213: -8860799512963777396
-    second: SPR_ZMB_DEATH_RIGHT_2
+      213: 8729227648935360593
+    second: SPR_GUARD_DEATH_2
   - first:
-      213: -4558902717463546504
-    second: SPR_ZMB_DEATH_RIGHT_3
+      213: 6084655681268698165
+    second: SPR_GUARD_DEATH_3
   - first:
-      213: 8287281670892740602
-    second: SPR_ZMB_DEATH_RIGHT_4
+      213: -8777350054663081064
+    second: SPR_GUARD_DEATH_4
   - first:
-      213: 4194023238465157432
-    second: SPR_ZMB_DEATH_RIGHT_5
+      213: -94344589392520774
+    second: SPR_GUARD_DEATH_5
   - first:
-      213: 366010598422214061
-    second: SPR_ZMB_DEATH_RIGHT_6
+      213: 6056542781724024713
+    second: SPR_GUARD_DEATH_6
   - first:
-      213: 7686102942128661934
-    second: SPR_ZMB_DEATH_RIGHT_7
+      213: 2958985428510068017
+    second: SPR_GUARD_DEATH_7
   - first:
-      213: -7567888172383357688
-    second: SPR_ZMB_DEATH_RIGHT_8
+      213: 2740731988649956503
+    second: SPR_GUARD_DEATH_8
   - first:
-      213: -6272866220659861405
-    second: SPR_ZMB_DEATH_RIGHT_9
+      213: 2479566905668195747
+    second: SPR_GUARD_DEATH_9
   - first:
-      213: 4457143730836480855
-    second: SPR_ZMB_DEATH_RIGHT_10
+      213: 5260785931540684855
+    second: SPR_GUARD_DEATH_10
   - first:
-      213: -2634698970806528282
-    second: SPR_ZMB_DEATH_RIGHT_11
+      213: 445883229398356692
+    second: SPR_GUARD_DEATH_11
   - first:
-      213: -1419271470190405254
-    second: SPR_ZMB_DEATH_RIGHT_12
+      213: -6922551661290858088
+    second: SPR_GUARD_DEATH_12
+  - first:
+      213: 5946967153384841018
+    second: SPR_GUARD_DEATH_13
+  - first:
+      213: -8198073510483192172
+    second: SPR_GUARD_DEATH_14
+  - first:
+      213: 3385537062680602910
+    second: SPR_GUARD_DEATH_15
+  - first:
+      213: 356799344099080337
+    second: SPR_GUARD_DEATH_16
+  - first:
+      213: -99175959025653727
+    second: SPR_GUARD_DEATH_17
+  - first:
+      213: 23269969448977392
+    second: SPR_GUARD_DEATH_18
+  - first:
+      213: 7776641863434771807
+    second: SPR_GUARD_DEATH_19
+  - first:
+      213: 8452753278235614837
+    second: SPR_GUARD_DEATH_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +154,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_0
+      name: SPR_GUARD_DEATH_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659b1cf00ad8f0940800000000000000
-      internalID: 5264582208018037078
+      spriteID: 369cb29422c5adc20800000000000000
+      internalID: 3231996984918002019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_1
+      name: SPR_GUARD_DEATH_1
       rect:
         serializedVersion: 2
         x: 16
@@ -165,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a7e0221f50f652e0800000000000000
-      internalID: -2137256682024015968
+      spriteID: 1f18bbd4980e7d2e0800000000000000
+      internalID: -2100963820825771535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_2
+      name: SPR_GUARD_DEATH_2
       rect:
         serializedVersion: 2
         x: 32
@@ -186,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8cf6db1acd180580800000000000000
-      internalID: -8860799512963777396
+      spriteID: 1587f4a1c42742970800000000000000
+      internalID: 8729227648935360593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_3
+      name: SPR_GUARD_DEATH_3
       rect:
         serializedVersion: 2
         x: 48
@@ -207,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875b500f1268bb0c0800000000000000
-      internalID: -4558902717463546504
+      spriteID: 53c459eaa1a017450800000000000000
+      internalID: 6084655681268698165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_4
+      name: SPR_GUARD_DEATH_4
       rect:
         serializedVersion: 2
         x: 64
@@ -228,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: affda2395c6520370800000000000000
-      internalID: 8287281670892740602
+      spriteID: 8933d8231a6903680800000000000000
+      internalID: -8777350054663081064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_5
+      name: SPR_GUARD_DEATH_5
       rect:
         serializedVersion: 2
         x: 80
@@ -249,14 +273,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 839f27c1ae9243a30800000000000000
-      internalID: 4194023238465157432
+      spriteID: ab957c68812d0bef0800000000000000
+      internalID: -94344589392520774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_6
+      name: SPR_GUARD_DEATH_6
       rect:
         serializedVersion: 2
         x: 96
@@ -270,14 +294,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5fbf633b4541500800000000000000
-      internalID: 366010598422214061
+      spriteID: 98fdd9f22992d0450800000000000000
+      internalID: 6056542781724024713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_7
+      name: SPR_GUARD_DEATH_7
       rect:
         serializedVersion: 2
         x: 112
@@ -291,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea5e9a437e58aaa60800000000000000
-      internalID: 7686102942128661934
+      spriteID: 13d46e1e19d601920800000000000000
+      internalID: 2958985428510068017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_8
+      name: SPR_GUARD_DEATH_8
       rect:
         serializedVersion: 2
         x: 128
@@ -312,14 +336,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 805b539bdc579f690800000000000000
-      internalID: -7567888172383357688
+      spriteID: 794d7000939090620800000000000000
+      internalID: 2740731988649956503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_9
+      name: SPR_GUARD_DEATH_9
       rect:
         serializedVersion: 2
         x: 144
@@ -333,14 +357,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 368950a486d42f8a0800000000000000
-      internalID: -6272866220659861405
+      spriteID: 3a5da21a6f0396220800000000000000
+      internalID: 2479566905668195747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_10
+      name: SPR_GUARD_DEATH_10
       rect:
         serializedVersion: 2
         x: 160
@@ -354,14 +378,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7532e55bb94fadd30800000000000000
-      internalID: 4457143730836480855
+      spriteID: 730ead09ee0120940800000000000000
+      internalID: 5260785931540684855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_11
+      name: SPR_GUARD_DEATH_11
       rect:
         serializedVersion: 2
         x: 176
@@ -375,14 +399,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e65dface3baf6bd0800000000000000
-      internalID: -2634698970806528282
+      spriteID: 4d2d79b4f68103600800000000000000
+      internalID: 445883229398356692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPR_ZMB_DEATH_RIGHT_12
+      name: SPR_GUARD_DEATH_12
       rect:
         serializedVersion: 2
         x: 192
@@ -396,8 +420,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7954731e1cbd4ce0800000000000000
-      internalID: -1419271470190405254
+      spriteID: 899d779f0f72eef90800000000000000
+      internalID: -6922551661290858088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f5b6c1e1fd78250800000000000000
+      internalID: 5946967153384841018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4961c15d3979a3e80800000000000000
+      internalID: -8198073510483192172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e192ffa6508dbfe20800000000000000
+      internalID: 3385537062680602910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1983e11fc1b93f400800000000000000
+      internalID: 356799344099080337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1286400adf7af9ef0800000000000000
+      internalID: -99175959025653727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3c0f6f9eba25000800000000000000
+      internalID: 23269969448977392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d1677829e2ceb60800000000000000
+      internalID: 7776641863434771807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_GUARD_DEATH_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e904b62563e4570800000000000000
+      internalID: 8452753278235614837
       vertices: []
       indices: 
       edges: []
