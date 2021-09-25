@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour
 {
     public EnemyData data;
-
-    public Player player;
+    public PlayerMoviment player;
+    protected NavMeshAgent agent;
 
     private void Awake()
     {
@@ -16,13 +17,21 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Init()
     {
-        player = FindObjectOfType<Player>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        player = FindObjectOfType<PlayerMoviment>();
 
     }
 
-    public virtual void Movement()
+    private void Update()
     {
-        transform.position = Vector2.Lerp(transform.position, player.transform.position, data.speed);
+        FollowPlayer();
+    }
+
+    public virtual void FollowPlayer()
+    {
+        agent.SetDestination(player.transform.position);
 
     }
 
@@ -34,12 +43,13 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void Stopped()
     {
+        agent.SetDestination(transform.position);
 
     }
 
     public float Distance()
     {
-        return Vector2.Distance(transform.position, player.transform.position);
+        return agent.remainingDistance;
     }
 
 }
