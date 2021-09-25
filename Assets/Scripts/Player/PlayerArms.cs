@@ -14,11 +14,16 @@ public class PlayerArms : MonoBehaviour
     public float throwForce;
     public float timeToHold = 2f;
     public int keyboard;
+    public float damage = 1;
+
+    [Header("Tags")]
+    public string enemies = "Enemy";
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collider2d = GetComponent<BoxCollider2D>();
+
     }
     private void Update()
     {
@@ -31,6 +36,7 @@ public class PlayerArms : MonoBehaviour
         {
             _throwArm = false;
             _timeHold += Time.deltaTime;
+            print("A");
         }
         if (Input.GetMouseButtonUp(keyboard))
         {
@@ -44,7 +50,7 @@ public class PlayerArms : MonoBehaviour
         float force = holdTime * throwForce;
         Debug.Log(force);
         return force;
-        
+
     }
 
     void Throw(float force)
@@ -54,13 +60,16 @@ public class PlayerArms : MonoBehaviour
 
         _rigidbody2D.isKinematic = false;
         transform.parent = null;
-        _rigidbody2D.AddForce(_mousePos * force);
+        _rigidbody2D.AddForce(_mousePos * force * Time.deltaTime);
+        gameObject.layer = 8;
+        print("F");
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _rigidbody2D.isKinematic = true;
         gameObject.layer = 8;
-        _rigidbody2D.velocity = new Vector2(0f,0f);
+        _rigidbody2D.velocity = new Vector2(0f, 0f);
         _timeHold = 0f;
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -68,6 +77,12 @@ public class PlayerArms : MonoBehaviour
             transform.SetParent(armPosition.transform);
             transform.position = armPosition.transform.position;
         }
+        else if (collision.collider.tag == enemies &&
+         collision.gameObject.TryGetComponent(out Health health))
+        {
+            health.Damage(damage);
+        }
+
 
     }
 }
