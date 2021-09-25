@@ -5,18 +5,19 @@ using UnityEngine;
 public class PlayerMoviment : MonoBehaviour
 {
     public int speed;
-    private CharacterController _characterController;
+    private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-    private Vector2 _moveCharacter;
+    private Vector3 _moveCharacter;
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        _moveCharacter = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _moveCharacter = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"),0f);
 
-        _characterController.Move(_moveCharacter * speed * Time.deltaTime);
+        transform.position = transform.position + _moveCharacter * speed * Time.deltaTime;
+        _rigidbody2D.AddForce(_moveCharacter * speed * Time.deltaTime);
     }
 }
