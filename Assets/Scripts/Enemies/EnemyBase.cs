@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public class EnemyBase : MonoBehaviour
 {
     public EnemyData data;
-    public PlayerMoviment player;
+    public Health health { get; set; }
     protected NavMeshAgent agent;
-
+    protected PlayerMoviment player;
+    protected Health _playerHealth;
     private void Awake()
     {
         Init();
@@ -20,17 +22,17 @@ public class EnemyBase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        
+
         player = FindObjectOfType<PlayerMoviment>();
+        _playerHealth = player.GetComponent<Health>();
 
         agent.speed = data.speed;
         agent.stoppingDistance = data.range;
 
-    }
+        health = GetComponent<Health>();
+        health.SetInitialLife(data.initialLife);
+        health.OnKill += AddScore;
 
-    private void Update()
-    {
-        FollowPlayer();
     }
 
     public virtual void FollowPlayer()
@@ -42,7 +44,6 @@ public class EnemyBase : MonoBehaviour
     public virtual void Attack()
     {
 
-
     }
 
     public virtual void Stopped()
@@ -51,9 +52,28 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    public float Distance()
+    public float GetRemainingDistance()
     {
         return agent.remainingDistance;
+    }
+
+    public float GetDelay()
+    {
+        return data.delay;
+    }
+
+    private void AddScore()
+    {
+        GameManager.Instance.AddScore(data.score);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject == player.gameObject)
+        {
+            _playerHealth.Damage(data.fisicalDamage);
+
+        }
     }
 
 }

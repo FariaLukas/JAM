@@ -7,5 +7,11 @@ public class EnemyData : ScriptableObject
 {
     public float speed;
     public float range;
+    public float delay;
+    
+    public float initialLife;
+    public int score;
+
     public float damage;
+    public float fisicalDamage;
 }
