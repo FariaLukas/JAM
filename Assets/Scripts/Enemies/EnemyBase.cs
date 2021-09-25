@@ -6,24 +6,40 @@ public class EnemyBase : MonoBehaviour
 {
     public EnemyData data;
 
+    public Player player;
+
     private void Awake()
     {
         Init();
+
     }
 
     protected virtual void Init()
     {
+        player = FindObjectOfType<Player>();
 
     }
 
-    protected virtual void Movement()
+    public virtual void Movement()
+    {
+        transform.position = Vector2.Lerp(transform.position, player.transform.position, data.speed);
+
+    }
+
+    public virtual void Attack()
+    {
+
+
+    }
+
+    public virtual void Stopped()
     {
 
     }
 
-    protected virtual void Attack()
+    public float Distance()
     {
-
+        return Vector2.Distance(transform.position, player.transform.position);
     }
 
 }
