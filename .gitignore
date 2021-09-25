@@ -76,3 +76,8 @@ Logs/shadercompiler-UnityShaderCompiler.exe8.log
 Logs/shadercompiler-UnityShaderCompiler.exe9.log
 Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
+*.log
+Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta
