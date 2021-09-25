@@ -20,7 +20,11 @@ public class EnemyBase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        
         player = FindObjectOfType<PlayerMoviment>();
+
+        agent.speed = data.speed;
+        agent.stoppingDistance = data.range;
 
     }
 
