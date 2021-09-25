@@ -7,17 +7,31 @@ public class PlayerMoviment : MonoBehaviour
     public int speed;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-    private Vector3 _moveCharacter;
+    private Vector2 _moveCharacter;
+    private Vector2 _moveVelocity;
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate()
+    {
+        Move();
+    }
     private void Update()
     {
-        _moveCharacter = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"),0f);
+        Calculo();
+    }
+    
+    private void Calculo()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        float movey = Input.GetAxis("Vertical");
 
-        transform.position = transform.position + _moveCharacter * speed * Time.deltaTime;
-      //  _rigidbody2D.AddForce(_moveCharacter * speed * Time.deltaTime);
+        _moveCharacter = new Vector2(moveX, movey);
+    }
+    private void Move()
+    {
+        _rigidbody2D.velocity = new Vector2(_moveCharacter.x * speed, _moveCharacter.y * speed);
     }
 }
