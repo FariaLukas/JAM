@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255370447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: 0}
+  m_LocalPosition: {x: 1.056, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2036422652}
@@ -161,7 +161,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1891252821
 MonoBehaviour:
@@ -176,9 +176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPosition: {fileID: 1898660239}
-  throwForce: 50
+  throwForce: 10
   timeToHold: 1
   keyboard: 0
+  damage: 0
+  enemies: Enemy
 --- !u!1 &1898660239
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898660239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -1, z: 0}
+  m_LocalPosition: {x: -1.081, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1891252820}
@@ -340,7 +342,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2036422648
 MonoBehaviour:
@@ -355,9 +357,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPosition: {fileID: 255370447}
-  throwForce: 1
+  throwForce: 10
   timeToHold: 1
   keyboard: 1
+  damage: 0
+  enemies: Enemy
 --- !u!1 &8451177601307633635
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,15 @@ public class PlayerArms : MonoBehaviour
     private BoxCollider2D _collider2d;
     private bool _throwArm;
     private float _timeHold;
+    private Vector2 velocit;
 
     public GameObject armPosition;
     public float throwForce;
-    public float timeToHold = 2f;
+    public float timeToHold;
     public int keyboard;
-
+    public float damage;
+    public string enemies = "Enemy";
+    
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -22,18 +25,20 @@ public class PlayerArms : MonoBehaviour
     }
     private void Update()
     {
-        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+       
         if (transform.parent != null)
             _throwArm = true;
 
-
         if (Input.GetMouseButton(keyboard))
         {
+           
             _throwArm = false;
             _timeHold += Time.deltaTime;
         }
         if (Input.GetMouseButtonUp(keyboard))
         {
+            _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Throw(Calculate(_timeHold));
         }
     }
@@ -42,9 +47,7 @@ public class PlayerArms : MonoBehaviour
     {
         float holdTime = Mathf.Clamp01(time / timeToHold);
         float force = holdTime * throwForce;
-        Debug.Log(force);
-        return force;
-        
+        return force;       
     }
 
     void Throw(float force)
@@ -52,21 +55,28 @@ public class PlayerArms : MonoBehaviour
         if (!_throwArm)
             return;
 
+        
         _rigidbody2D.isKinematic = false;
         transform.parent = null;
-        _rigidbody2D.AddForce(_mousePos * force);
+        velocit = new Vector2(_mousePos.x * force, _mousePos.y * force);
+        _rigidbody2D.velocity = new Vector2(velocit.x, velocit.y);      
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _rigidbody2D.isKinematic = true;
         gameObject.layer = 8;
-        _rigidbody2D.velocity = new Vector2(0f,0f);
         _timeHold = 0f;
+        _rigidbody2D.isKinematic = true;
+        _rigidbody2D.velocity = Vector2.zero;
         if (collision.gameObject.CompareTag("Player"))
         {
             gameObject.layer = 6;
             transform.SetParent(armPosition.transform);
             transform.position = armPosition.transform.position;
+        }
+        else if (collision.collider.tag == enemies &&
+        collision.gameObject.TryGetComponent(out Health health))
+        {
+            health.Damage(damage);
         }
 
     }
