@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
-using Sirenix.OdinInspector;
 
 public class Health : MonoBehaviour
 {
@@ -17,20 +16,13 @@ public class Health : MonoBehaviour
     public Action OnKill;
 
     [Header("Invencibility")]
-    [ShowIf(nameof(HasInvencibility))]
     public Color hitColor = Color.cyan;
-    [ShowIf(nameof(HasInvencibility))]
     public int hitTime = 4;
 
     private Collider2D _collider;
     private SpriteRenderer _render;
     private Color _inicialColor;
     private bool _canTakeDamage = true;
-
-    private bool HasInvencibility()
-    {
-        return invencibilityTime > 0;
-    }
 
     private void Awake()
     {
@@ -77,14 +69,9 @@ public class Health : MonoBehaviour
         BlinkAnimation(deathColor, duration, deathFeedback).OnComplete(() => Killling());
 
     }
-
-    public bool Dead()
-    {
-        return currentLife <= 0;
-    }
-    
     private void Killling()
     {
+        print("AAAAA");
         gameObject.SetActive(false);
     }
 

@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerControll : MonoBehaviour
 {
     public int speed;
-
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private Vector2 _moveCharacter;
     private Vector2 _moveVelocity;
-
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -24,7 +22,7 @@ public class PlayerControll : MonoBehaviour
     {
         Calculo();
     }
-
+    
     private void Calculo()
     {
         float moveX = Input.GetAxis("Horizontal");

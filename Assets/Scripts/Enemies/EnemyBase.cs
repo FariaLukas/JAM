@@ -9,9 +9,8 @@ public class EnemyBase : MonoBehaviour
     public EnemyData data;
     public Health health { get; set; }
     protected NavMeshAgent agent;
-    protected PlayerControll player;
+    protected PlayerMoviment player;
     protected Health _playerHealth;
-    
     private void Awake()
     {
         Init();
@@ -24,7 +23,7 @@ public class EnemyBase : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        player = FindObjectOfType<PlayerControll>();
+        player = FindObjectOfType<PlayerMoviment>();
         _playerHealth = player.GetComponent<Health>();
 
         agent.speed = data.speed;
