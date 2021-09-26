@@ -15,7 +15,10 @@ MonoBehaviour:
   speed: 2.5
   range: 5
   delay: 2
-  initialLife: 2
+  initialLife: 1
   score: 70
   damage: 2
   fisicalDamage: 1
+  attackTrigger: Attack
+  speedTrigger: Speed
+  dieTrigger: Die
