@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour
     protected PlayerControll player;
     protected Health playerHealth;
     protected Animator animator;
+    protected bool dead;
 
     private void Awake()
     {
@@ -22,6 +23,11 @@ public class EnemyBase : MonoBehaviour
     private void OnEnable()
     {
         Init();
+    }
+
+    private void OnDisable()
+    {
+        health.OnKill -= AddScore;
     }
 
     protected virtual void Init()
@@ -39,14 +45,17 @@ public class EnemyBase : MonoBehaviour
 
         health = GetComponent<Health>();
         health.SetInitialLife(data.initialLife);
-        health.OnKill += AddScore;
+        health.OnKill += OnDie;
 
         animator = GetComponent<Animator>();
+
+        dead = false;
 
     }
 
     public virtual void FollowPlayer()
     {
+        if (dead) return;
         agent.SetDestination(player.transform.position);
 
     }
@@ -65,6 +74,7 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void Attack()
     {
+        if (dead) return;
         if (animator)
             animator.SetTrigger(data.attackTrigger);
     }
@@ -88,6 +98,12 @@ public class EnemyBase : MonoBehaviour
     private void AddScore()
     {
         GameManager.Instance.AddScore(data.score);
+    }
+
+    protected virtual void OnDie()
+    {
+        AddScore();
+        dead = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
