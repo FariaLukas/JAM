@@ -62,6 +62,7 @@ public class PowerUp : MonoBehaviour
     {
         _currentPower = 0;
         UpdateDisplay(releaseDuration);
+        feedack.SetActive(false);
     }
 
     private void ActivePowerCount()

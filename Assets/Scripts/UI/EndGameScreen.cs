@@ -28,7 +28,6 @@ public class EndGameScreen : MonoBehaviour, IInitializable
 
     private void ScreenActivation()
     {
-
         gameObject.SetActive(true);
         OnEnableObject?.Invoke();
         scoreText.text = "";

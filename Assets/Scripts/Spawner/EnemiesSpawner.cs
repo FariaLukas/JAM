@@ -25,8 +25,11 @@ public class EnemiesSpawner : MonoBehaviour
     public List<RandomDuble> randoms;
 
     public float spawnRatio = 2.3f;
+    public float decreaseRate = 0.96f;
+    public float miniumRatio = 1.5f;
     public bool startEnabled;
     public bool stopped;
+    public bool decreaseByTime = true;
 
     private void Start()
     {
@@ -34,7 +37,7 @@ public class EnemiesSpawner : MonoBehaviour
         PoolSetup(rangeds);
 
         GameManager.Instance.OnPlayerDie += DisableRespawn;
-        
+
         if (startEnabled)
             EnableSpawn();
 
@@ -82,6 +85,8 @@ public class EnemiesSpawner : MonoBehaviour
     {
         int firstCheck = GetRandom();
 
+        if (spawnRatio > miniumRatio && decreaseByTime)
+            spawnRatio *= decreaseRate;
 
         if (firstCheck < firstChance)//Melee
         {

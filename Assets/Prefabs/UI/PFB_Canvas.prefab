@@ -597,7 +597,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5720039283198289128}
   m_OnClick:
     m_PersistentCalls:
@@ -1285,7 +1285,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1688520355033652430}
   m_OnClick:
     m_PersistentCalls:
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5258544, g: 0.9528302, b: 0.5827755, a: 1}
+  m_Color: {r: 0.18022428, g: 0.509434, b: 0.22552839, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1967,6 +1967,7 @@ MonoBehaviour:
   currentScore: {fileID: 11400000, guid: 24e028e98dacd744aad23966a2276514, type: 2}
   playerLife: {fileID: 11400000, guid: b785078602f60c4419fc9a2bd3c3b4d6, type: 2}
   canActivePowerUp: 0
+  cursor: {fileID: 2800000, guid: f4dc9fe005bba014aaf9c9782d790665, type: 3}
 --- !u!114 &5134953782032826982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,8 +2024,11 @@ MonoBehaviour:
   - minMaxWdth: {x: 16, y: 17}
     minMaxHeight: {x: -11, y: 3}
   spawnRatio: 2.3
+  decreaseRate: 0.96
+  miniumRatio: 1.5
   startEnabled: 0
   stopped: 0
+  decreaseByTime: 1
 --- !u!114 &6557646927732272581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,7 +2431,31 @@ MonoBehaviour:
   currentScore: {fileID: 11400000, guid: 24e028e98dacd744aad23966a2276514, type: 2}
   OnFinish:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2411917434402128059}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2148182073510939824}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnEnableObject:
     m_PersistentCalls:
       m_Calls: []

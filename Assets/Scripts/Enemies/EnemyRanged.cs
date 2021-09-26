@@ -28,15 +28,13 @@ public class EnemyRanged : EnemyBase
     private void OnBecameVisible()
     {
         Invoke(nameof(Activate), 1f);
-        print("A");
+
     }
 
     private void Activate()
     {
         if (_render.isVisible)
             _canAttack = true;
-
-        print("B");
     }
 
     private void OnBecameInvisible()

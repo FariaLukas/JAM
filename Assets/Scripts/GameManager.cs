@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GlobalInt currentScore;
     public GlobalInt playerLife;
     public bool canActivePowerUp;
+    public Texture2D cursor;
 
     public Action OnUpdateScore;
     public Action OnPlayerDamage;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Action OnPowerUp;
     public Action OnPowerDown;
     public Action OnPlayerDie;
+    private float xspot, yspot;
 
     private void Awake()
     {
@@ -27,7 +29,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         currentScore.value = 0;
+        cursorSet(cursor);
+    }
 
+    void cursorSet(Texture2D tex)
+    {
+        CursorMode mode = CursorMode.ForceSoftware;
+        xspot = tex.width / 2;
+        yspot = tex.height / 2;
+        Vector2 hotSpot = new Vector2(xspot, yspot);
+        Cursor.SetCursor(tex, hotSpot, mode);
     }
 
     public void AddScore(int score, Vector3 position)

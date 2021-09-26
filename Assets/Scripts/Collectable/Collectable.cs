@@ -27,6 +27,9 @@ public class Collectable : MonoBehaviour
 
     public void ChangeCollider(bool active)
     {
-        _collider.enabled = active;
+        if (!_collider)
+            _collider = GetComponent<Collider2D>();
+        if (_collider)
+            _collider.enabled = active;
     }
 }

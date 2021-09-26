@@ -38,8 +38,15 @@ public class PlayerArms : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collider2d = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
+        GameManager.Instance.OnPlayerDie += PlayerDeath;
     }
 
+    private void PlayerDeath()
+    {
+        gameObject.SetActive(false);
+        armFeedback.gameObject.SetActive(false);
+    }
+    
     private void Update()
     {
         if (transform.parent == null)

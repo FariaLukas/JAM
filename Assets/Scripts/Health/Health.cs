@@ -66,10 +66,15 @@ public class Health : MonoBehaviour
     public virtual void Damage(float damage, GameObject g)
     {
         if (!_canTakeDamage) return;
-
+        if (canPrint)
+            print("A + " + damage + " : " + g.name);
+            
         _canTakeDamage = false;
 
         currentLife -= damage;
+
+        if (_playerControll)
+            _playerControll.Animator("Hit");
 
         if (currentLife <= 0)
         {
@@ -105,12 +110,21 @@ public class Health : MonoBehaviour
 
     }
 
+    public void SetDamagable(bool b)
+    {
+        _canTakeDamage = b;
+        _render.DOKill();
+        _render.color = _inicialColor;
+        StopAllCoroutines();
+    }
+    public void ResetInvencible()
+    {
+        StartCoroutine(WaitToTakeDamage());
+    }
+
     private Tween BlinkAnimation(Color endValue, float duration, int loop)
     {
         float timer = (float)duration / loop * 2;
-        
-        if (_playerControll)
-            _playerControll.Animator("Hit");
 
         _render.DOKill();
         _render.color = _inicialColor;
