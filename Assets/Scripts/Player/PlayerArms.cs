@@ -13,6 +13,7 @@ public class PlayerArms : MonoBehaviour
     private Vector2 _velocit;
     private bool _enableToDamage;
 
+    public PlayerControll playerControll;
     public GameObject armPosition;
     public float throwForce;
     public float timeToHold;
@@ -75,6 +76,7 @@ public class PlayerArms : MonoBehaviour
         if (!_throwArm)
             return;
 
+        playerControll.Animator("Attack");
         _animator.SetBool("Attack", true);
         _rigidbody2D.isKinematic = false;
         transform.parent = null;

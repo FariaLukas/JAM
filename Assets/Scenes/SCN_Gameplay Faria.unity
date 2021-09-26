@@ -470,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446246127, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446246128, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1891252821, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
+      propertyPath: playerControll
+      value: 
+      objectReference: {fileID: 823477488}
     - target: {fileID: 1891252823, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
       propertyPath: m_Size.x
       value: 0.375
@@ -552,6 +556,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 2036422648, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
+      propertyPath: playerControll
+      value: 
+      objectReference: {fileID: 823477488}
     - target: {fileID: 2036422650, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
       propertyPath: m_Size.x
       value: 0.375
@@ -592,6 +600,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8451177601307633632, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
+      propertyPath: oldSprite
+      value: 
+      objectReference: {fileID: -7711759991819227081, guid: 3d01f3119663bca4090b1b20c0fffacb, type: 3}
+    - target: {fileID: 8451177601307633632, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
+      propertyPath: ultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fcfc972c28fb3546ad61fae3012b2a8, type: 3}
     - target: {fileID: 8451177601307633635, guid: 87d21029c799acd4ba05edeab56979ef, type: 3}
       propertyPath: m_Name
       value: PFB_Player

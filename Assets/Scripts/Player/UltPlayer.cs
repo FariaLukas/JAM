@@ -27,6 +27,8 @@ public class UltPlayer : MonoBehaviour
     private void Active()
     {
         if (_active) return;
+        playerControll._animator.enabled = false;
+        playerControll._spriteRenderer.sprite = playerControll.ultSprite;
         _active = true;
         guardar = transform.position;
         StartCoroutine(Return(_active));
@@ -49,6 +51,8 @@ public class UltPlayer : MonoBehaviour
 
     private void Test()
     {
+        playerControll._spriteRenderer.sprite = playerControll.oldSprite;
+        playerControll._animator.enabled = true;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
         Sequence s = DOTween.Sequence();

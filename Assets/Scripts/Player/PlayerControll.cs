@@ -7,7 +7,10 @@ public class PlayerControll : MonoBehaviour
     public bool lockMoviment;
     public int speed;
     private Rigidbody2D _rigidbody2D;
-    private Animator _animator;
+    public Animator _animator;
+    public SpriteRenderer _spriteRenderer;
+    public Sprite ultSprite; 
+    public Sprite oldSprite; 
     private Vector2 _moveCharacter;
     private Vector2 _moveVelocity;
     private bool died;
@@ -17,6 +20,7 @@ public class PlayerControll : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         GameManager.Instance.OnPlayerDie += PlayerDied;
         _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
