@@ -36,7 +36,7 @@ public class PlayerArms : MonoBehaviour
         {
             _throwArm = false;
             _timeHold += Time.deltaTime;
-            print("A");
+
         }
         if (Input.GetMouseButtonUp(keyboard))
         {
@@ -48,7 +48,6 @@ public class PlayerArms : MonoBehaviour
     {
         float holdTime = Mathf.Clamp01(time / timeToHold);
         float force = holdTime * throwForce;
-        Debug.Log(force);
         return force;
 
     }
@@ -58,11 +57,10 @@ public class PlayerArms : MonoBehaviour
         if (!_throwArm)
             return;
 
-        _rigidbody2D.isKinematic = false;
         transform.parent = null;
-        _rigidbody2D.AddForce(_mousePos * force * Time.deltaTime);
-        gameObject.layer = 8;
-        print("F");
+        _rigidbody2D.isKinematic = false;
+        _rigidbody2D.AddForce(_mousePos * force);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

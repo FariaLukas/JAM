@@ -5,14 +5,15 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float ratio;
-    public float offset;
-    private Pool _pool;
-    private float _delay;
+    public List<Transform> muzzles;
+    protected Pool _pool;
+    protected float _delay;
+    private Transform _muzzleParent;
 
     private void Awake()
     {
         _pool = GetComponent<Pool>();
-
+        _muzzleParent = muzzles[0].parent;
     }
 
     public void OverrideRatio(float r)
@@ -20,21 +21,25 @@ public class Weapon : MonoBehaviour
         ratio = r;
     }
 
-    public void Shoot(Transform target, float damage)
+    public virtual void Shoot(Transform target, float damage)
     {
         if (_delay <= 0)
         {
             _delay = ratio;
 
-            GameObject bullet = _pool.GetPooledGameObject();
-            bullet.transform.position = transform.position;
-            bullet.SetActive(true);
+            _muzzleParent.transform.up = target.position - transform.position;
 
-            if (bullet.TryGetComponent(out Bullet b))
+            foreach (var m in muzzles)
             {
-                b.StartProjectile(target, damage, offset);
-            }
+                GameObject bullet = _pool.GetPooledGameObject();
+                bullet.transform.position = transform.position;
+                bullet.SetActive(true);
 
+                if (bullet.TryGetComponent(out Bullet b))
+                {
+                    b.StartProjectile(m, damage);
+                }
+            }
 
         }
         else

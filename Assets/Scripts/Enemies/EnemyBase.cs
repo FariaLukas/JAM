@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour
     protected NavMeshAgent agent;
     protected PlayerControll player;
     protected Health _playerHealth;
-    
+
     private void Awake()
     {
         Init();
@@ -25,7 +25,8 @@ public class EnemyBase : MonoBehaviour
         agent.updateUpAxis = false;
 
         player = FindObjectOfType<PlayerControll>();
-        _playerHealth = player.GetComponent<Health>();
+        if (player)
+            _playerHealth = player.GetComponent<Health>();
 
         agent.speed = data.speed;
         agent.stoppingDistance = data.range;
@@ -73,6 +74,7 @@ public class EnemyBase : MonoBehaviour
         if (other.gameObject == player.gameObject)
         {
             _playerHealth.Damage(data.fisicalDamage);
+
 
         }
     }

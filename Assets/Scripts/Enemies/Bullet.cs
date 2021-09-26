@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private string obstacleTag = "Obstacle";
     [SerializeField] private string playerTag = "Player";
-    private float _damage;
-    private Rigidbody2D _bulletRigidbody;
+    protected float _damage;
+    protected Rigidbody2D _bulletRigidbody;
 
     private void Awake()
     {
         _bulletRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void StartProjectile(Transform target, float damage, float offset)
+    public virtual void StartProjectile(Transform target, float damage)
     {
         _damage = damage;
 
-        Vector3 direction = target.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - offset;
-        _bulletRigidbody.rotation = angle;
-
-        _bulletRigidbody.AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        _bulletRigidbody.AddForce(target.up * speed, ForceMode2D.Impulse);
 
     }
 
