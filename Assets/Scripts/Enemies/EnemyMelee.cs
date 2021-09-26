@@ -11,10 +11,18 @@ public class EnemyMelee : EnemyBase
         base.Attack();
 
         if (dead) return;
+
+        if (Vector2.Distance(player.transform.position, transform.position) > data.range) return;
+
         if (playerHealth)
         {
-            playerHealth.Damage(data.damage);
+
+            if (animator)
+                animator.SetTrigger(data.attackTrigger);
+
+            playerHealth.Damage(data.damage, gameObject);
             GameManager.Instance.PlayerDamage();
+           
         }
 
     }

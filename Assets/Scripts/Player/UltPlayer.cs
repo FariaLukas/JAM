@@ -1,46 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class UltPlayer : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody2D;
-    private Vector2 headforce;
-    private Vector2 guardar;
-    private bool _active = false;
+    [SerializeField] private Vector2 xRandom, yRandom;
     public PlayerControll playerControll;
     public KeyCode keyCode;
     public float ThrowForce;
 
+    [Header("Animation")]
+    public float duration = .5f;
+    public Ease ease = Ease.InBack;
+
+    private Rigidbody2D _rigidbody2D;
+    private Vector2 guardar;
+    private bool _active = false;
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        
+        GameManager.Instance.OnPowerUp += Active;
     }
 
-    private void Update()
-    {  
-        if (Input.GetKeyDown(keyCode) && !_active)
-        {
-            _active = true;
-            guardar = transform.position;
-            StartCoroutine(Return(_active));
-            PlayerControll.lockMoviment = true;
-            playerControll.Move(Vector2.zero);
-            transform.up = (Vector3)headforce - transform.position;
-            _rigidbody2D.isKinematic = false;
-            _rigidbody2D.AddForce(transform.up * ThrowForce);
-        }
+    private void Active()
+    {
+        if (_active) return;
+        _active = true;
+        guardar = transform.position;
+        StartCoroutine(Return(_active));
+        playerControll.SetLock(true);
+        playerControll.Move(Vector2.zero);
+        AddForce();
+
+    }
+
+    private void AddForce()
+    {
+        float x = Random.Range(xRandom.x, xRandom.y);
+        float y = Random.Range(yRandom.x, yRandom.y);
+        Vector2 force = new Vector2(x, y);
+        transform.up = force;
+
+        _rigidbody2D.isKinematic = false;
+        _rigidbody2D.AddForce(transform.up * ThrowForce);
     }
 
     private void Test()
     {
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
-        transform.position = guardar;
-        transform.rotation = Quaternion.Euler(0,0,0);
-        PlayerControll.lockMoviment = false;
+        Sequence s = DOTween.Sequence();
+        s.Append(transform.DOMove(guardar, duration).SetEase(ease));
+        s.Join(transform.DORotate(Vector3.zero, duration)).OnComplete(() => transform.rotation = Quaternion.Euler(0, 0, 0));
+        _rigidbody2D.angularVelocity = 0f;
+        playerControll.SetLock(false);
         _active = false;
+        GameManager.Instance.PowerDown();
     }
 
     private IEnumerator Return(bool active)

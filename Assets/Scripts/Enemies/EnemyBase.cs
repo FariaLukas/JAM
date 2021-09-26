@@ -14,12 +14,6 @@ public class EnemyBase : MonoBehaviour
     protected Animator animator;
     protected bool dead;
 
-    private void Awake()
-    {
-        Init();
-
-    }
-
     private void OnEnable()
     {
         Init();
@@ -27,29 +21,43 @@ public class EnemyBase : MonoBehaviour
 
     private void OnDisable()
     {
-        health.OnKill -= AddScore;
+        health.OnKill -= OnDie;
+
+        if (GameManager.Instance)
+            GameManager.Instance.OnPlayerDie -= Finish;
+        dead = true;
     }
 
     protected virtual void Init()
     {
-        agent = GetComponent<NavMeshAgent>();
+        if (!agent)
+            agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        player = FindObjectOfType<PlayerControll>();
+        if (!player)
+            player = FindObjectOfType<PlayerControll>();
         if (player)
             playerHealth = player.GetComponent<Health>();
 
         agent.speed = data.speed;
         agent.stoppingDistance = data.range;
 
-        health = GetComponent<Health>();
+        if (!health)
+            health = GetComponent<Health>();
+
         health.SetInitialLife(data.initialLife);
         health.OnKill += OnDie;
 
-        animator = GetComponent<Animator>();
+        if (!animator)
+            animator = GetComponent<Animator>();
+
+        if (GameManager.Instance)
+            GameManager.Instance.OnPlayerDie += Finish;
 
         dead = false;
+
+        Stopped();
 
     }
 
@@ -74,9 +82,7 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void Attack()
     {
-        if (dead) return;
-        if (animator)
-            animator.SetTrigger(data.attackTrigger);
+
     }
 
     public virtual void Stopped()
@@ -106,6 +112,11 @@ public class EnemyBase : MonoBehaviour
     {
         if (!dead)
             AddScore();
+        Finish();
+    }
+
+    protected virtual void Finish()
+    {
         dead = true;
         Stopped();
     }
@@ -116,7 +127,7 @@ public class EnemyBase : MonoBehaviour
         {
             if (playerHealth)
             {
-                playerHealth.Damage(data.fisicalDamage);
+                playerHealth.Damage(data.fisicalDamage, gameObject);
                 GameManager.Instance.PlayerDamage();
             }
 

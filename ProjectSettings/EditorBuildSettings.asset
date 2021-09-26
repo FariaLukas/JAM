@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SCN_Menu.unity
+    guid: ee1924f46f645054294c5ef7fdf246f1
+  - enabled: 1
+    path: Assets/Scenes/SCN_Gameplay Faria.unity
+    guid: 909a9b4ffbebd0345b104a889adae970
+  - enabled: 1
     path: Assets/Scenes/SCN_Gameplay.unity
     guid: 5fe3b8ddfeb3c514480a41fb0bb218d6
   m_configObjects: {}

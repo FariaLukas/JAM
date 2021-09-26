@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 
 public class Health : MonoBehaviour
 {
-    public float currentLife;
+    public float currentLife { get; set; }
 
     [Header("DeathAnimation")]
     public string deathParameter = "Die";
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     public Color hitColor = Color.cyan;
     [ShowIf(nameof(HasInvencibility))]
     public int hitTime = 4;
-
+    public bool canPrint;
     private Collider2D _collider;
     private SpriteRenderer _render;
     private Color _inicialColor;
@@ -58,9 +58,8 @@ public class Health : MonoBehaviour
         _canTakeDamage = true;
     }
 
-    public virtual void Damage(float damage)
+    public virtual void Damage(float damage, GameObject g)
     {
-
         if (!_canTakeDamage) return;
 
         _canTakeDamage = false;

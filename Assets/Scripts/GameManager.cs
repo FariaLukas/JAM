@@ -7,11 +7,16 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GlobalInt currentScore;
     public GameObject addScorePFB;
+    public GlobalInt currentScore;
+    public GlobalInt playerLife;
+
+
     public Action OnUpdateScore;
     public Action OnPlayerDamage;
-
+    public Action OnPowerUp;
+    public Action OnPowerDown;
+    public Action OnPlayerDie;
 
     private void Awake()
     {
@@ -19,6 +24,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        currentScore.value = 0;
 
     }
 
@@ -30,13 +37,35 @@ public class GameManager : MonoBehaviour
         t.text = "+" + score;
         Destroy(go, 0.7f);
         OnUpdateScore?.Invoke();
+
+        Save.Instance.SaveScore(currentScore.value);
     }
 
     public void PlayerDamage()
     {
         OnPlayerDamage?.Invoke();
+
+        PlayerDie();
+
     }
 
+    public void PlayerDie()
+    {
 
+        if (playerLife.value <= 0)
+        {
+            OnPlayerDie?.Invoke();
+        }
+    }
+
+    public void PowerUp()
+    {
+        OnPowerUp?.Invoke();
+    }
+
+    public void PowerDown()
+    {
+        OnPowerDown?.Invoke();
+    }
 
 }

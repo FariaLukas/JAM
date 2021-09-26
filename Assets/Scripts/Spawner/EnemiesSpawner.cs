@@ -22,17 +22,45 @@ public class EnemiesSpawner : MonoBehaviour
     public int rangedChance = 8;
 
     [Header("SpawnArea")]
-    public Vector2 minMaxWdth;
-    public Vector2 minMaxHeight;
+    public List<RandomDuble> randoms;
 
     public float spawnRatio = 2.3f;
+    public bool startEnabled;
+    public bool stopped;
 
-    private void Awake()
+    private void Start()
     {
         PoolSetup(melees);
         PoolSetup(rangeds);
 
-        InvokeRepeating(nameof(Spawn), spawnRatio, spawnRatio);
+        GameManager.Instance.OnPlayerDie += DisableRespawn;
+        
+        if (startEnabled)
+            EnableSpawn();
+
+    }
+
+    [Button]
+    public void EnableSpawn()
+    {
+        stopped = false;
+        StartCoroutine(Repeat());
+    }
+
+    public void DisableRespawn()
+    {
+        stopped = true;
+    }
+
+    IEnumerator Repeat()
+    {
+        while (!stopped)
+        {
+            yield return new WaitForSeconds(spawnRatio);
+            if (stopped) yield break;
+
+            Spawn();
+        }
     }
 
     private void PoolSetup(List<EnemySpawnSetup> setups)
@@ -60,7 +88,7 @@ public class EnemiesSpawner : MonoBehaviour
             int secondCheck = GetRandom();
             int id = secondCheck < meleeChance ? 0 : 1;
 
-            print(secondCheck + ": MELEE: " + id);
+            //            print(secondCheck + ": MELEE: " + id);
             SetSpawn(id, melees);
 
         }  //Ranged
@@ -68,7 +96,7 @@ public class EnemiesSpawner : MonoBehaviour
         {
             int secondCheck = GetRandom();
             int id = secondCheck < rangedChance ? 0 : 1;
-            print(secondCheck + ": RANGED: " + id);
+            // print(secondCheck + ": RANGED: " + id);
             SetSpawn(id, rangeds);
 
         }
@@ -95,11 +123,15 @@ public class EnemiesSpawner : MonoBehaviour
     {
         GameObject g = setups[id].pool.GetPooledGameObject();
 
-        int i = GetRandomInt(new Vector2(0, 2)) > 1 ? 1 : -1;
+        int index = GetRandomInt(new Vector2(0, randoms.Count));
 
-        Vector2 spawnPos = new Vector2(GetRandom(minMaxWdth * i), GetRandom(minMaxHeight * i));
+        float i = GetRandom(randoms[index].minMaxWdth);
+        float a = GetRandom(randoms[index].minMaxHeight);
+
+        Vector2 spawnPos = new Vector2(i, a);
 
         g.transform.position = spawnPos;
+
         g.SetActive(true);
     }
 
@@ -112,4 +144,12 @@ public class EnemySpawnSetup
     public GameObject prefab;
     public int poolSize;
     public Pool pool;
+}
+
+[System.Serializable]
+public class RandomDuble
+{
+    public Vector2 minMaxWdth;
+    public Vector2 minMaxHeight;
+
 }

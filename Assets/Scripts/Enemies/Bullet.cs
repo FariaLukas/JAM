@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         {
             if (other.TryGetComponent(out Health health))
             {
-                health.Damage(_damage);
+                health.Damage(_damage, gameObject);
                 GameManager.Instance.PlayerDamage();
             }
 

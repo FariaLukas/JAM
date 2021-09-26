@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446246127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000018626451, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8451177601307633639}
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -165,9 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0c9bc266e3c0845a9f22b35d458646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRandom: {x: -20, y: 20}
+  yRandom: {x: -8, y: 8}
   playerControll: {fileID: 8451177601307633632}
   keyCode: 32
-  ThrowForce: 1000
+  ThrowForce: 2000
+  duration: 0.5
+  ease: 26
 --- !u!1 &1891252819
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +322,9 @@ MonoBehaviour:
   keyboard: 0
   damage: 1
   enemies: Enemy
+  duration: 0.3
+  ease: 27
+  timeToCatch: 0.3
 --- !u!1 &1898660239
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +506,9 @@ MonoBehaviour:
   keyboard: 1
   damage: 1
   enemies: Enemy
+  duration: 0.3
+  ease: 27
+  timeToCatch: 0.3
 --- !u!1 &8451177601307633635
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +524,7 @@ GameObject:
   - component: {fileID: 8451177601307633632}
   - component: {fileID: 4244549248298944676}
   - component: {fileID: 8451177601331125724}
+  - component: {fileID: 8637357231883559688}
   m_Layer: 6
   m_Name: PFB_Player
   m_TagString: Player
@@ -661,7 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f68facaacb485a46be2bb89ff4fdd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 3
   deathParameter: Die
   deathColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0.2
@@ -669,6 +679,7 @@ MonoBehaviour:
   invencibilityTime: 0.5
   hitColor: {r: 0, g: 1, b: 1, a: 0.39607844}
   hitTime: 4
+  canPrint: 0
 --- !u!95 &8451177601331125724
 Animator:
   serializedVersion: 3
@@ -688,3 +699,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8637357231883559688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451177601307633635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75170284ce65f5b4cb29fcd3b1ccbd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: {fileID: 11400000, guid: b785078602f60c4419fc9a2bd3c3b4d6, type: 2}
