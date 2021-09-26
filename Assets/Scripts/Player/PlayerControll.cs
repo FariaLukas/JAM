@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControll : MonoBehaviour
 {
+    public static bool lockMoviment;
     public int speed;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -16,21 +17,17 @@ public class PlayerControll : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if(!lockMoviment)
+            Move(Calculo());
     }
-    private void Update()
-    {
-        Calculo();
-    }
-    
-    private void Calculo()
+    private Vector2 Calculo()
     {
         float moveX = Input.GetAxis("Horizontal");
         float movey = Input.GetAxis("Vertical");
-
-        _moveCharacter = new Vector2(moveX, movey);
+         _moveCharacter = new Vector2(moveX, movey);
+        return _moveCharacter;
     }
-    private void Move()
+    public void Move(Vector2 _moveCharacter)
     {
         _rigidbody2D.velocity = new Vector2(_moveCharacter.x * speed, _moveCharacter.y * speed);
     }
