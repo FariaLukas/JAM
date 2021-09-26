@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 4
-  delay: 2.5
+  delay: 3.5
   initialLife: 1
   score: 40
   damage: 1

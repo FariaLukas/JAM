@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 531474854439843156, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
-  m_Color: {r: 0.6415094, g: 0.16037735, b: 0.16037735, a: 1}
+  m_Color: {r: 1, g: 0.63411653, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f68facaacb485a46be2bb89ff4fdd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 0
   deathParameter: Die
   deathColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0.2
@@ -175,6 +174,7 @@ MonoBehaviour:
   invencibilityTime: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   hitTime: 4
+  canPrint: 0
 --- !u!61 &4443090012081223665
 BoxCollider2D:
   m_ObjectHideFlags: 0

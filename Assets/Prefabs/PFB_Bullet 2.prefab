@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1ccaaaf15437c45a44c1d361caeeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 12
   obstacleTag: Obstacle
   playerTag: Player
 --- !u!61 &5355293493261615112
