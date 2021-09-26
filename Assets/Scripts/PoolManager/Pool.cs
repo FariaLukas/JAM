@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Pool : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private int _poolSize;
+    public GameObject prefab;
+    public int poolSize;
 
-    private List<GameObject> _pooledObjects;
+    private List<GameObject> _pooledObjects = new List<GameObject>();
     private GameObject _poolHolder;
 
     private void Awake()
@@ -17,13 +17,12 @@ public class Pool : MonoBehaviour
 
     public void WarmPool()
     {
-        if (!_prefab) return;
+        if (!prefab) return;
 
-        _pooledObjects = new List<GameObject>();
         _poolHolder = new GameObject();
         _poolHolder.name = gameObject.name + " - Pool";
 
-        for (int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < poolSize; i++)
         {
             AddGameObject();
         }
@@ -32,14 +31,14 @@ public class Pool : MonoBehaviour
 
     private GameObject AddGameObject()
     {
-        if (!_prefab) return null;
+        if (!prefab) return null;
 
-        GameObject newGO = (GameObject)Instantiate(_prefab);
+        GameObject newGO = (GameObject)Instantiate(prefab);
         newGO.SetActive(false);
 
         newGO.transform.SetParent(_poolHolder.transform);
 
-        newGO.name = _prefab.name + "-" + _pooledObjects.Count;
+        newGO.name = prefab.name + "-" + _pooledObjects.Count;
 
         _pooledObjects.Add(newGO);
 

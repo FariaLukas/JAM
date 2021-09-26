@@ -14,4 +14,5 @@ public class EnemyData : ScriptableObject
 
     public float damage;
     public float fisicalDamage;
+
 }
