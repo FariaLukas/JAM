@@ -28,8 +28,6 @@ public class PlayerArms : MonoBehaviour
         if (transform.parent != null)
             _throwArm = true;
 
-        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.DrawLine(transform.position, _mousePos);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, _mousePos);
         if (Input.GetMouseButton(keyboard))
         {   
