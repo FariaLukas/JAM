@@ -19,3 +19,7 @@ MonoBehaviour:
   score: 30
   damage: 1
   fisicalDamage: 1
+  attackTrigger: Attack
+  speedTrigger: Speed
+  dieTrigger: Die
+  prefab: {fileID: 2997668365607874770, guid: 1f2a15e9f84082c40ba9524e0fee5aeb, type: 3}

@@ -106,6 +106,10 @@ public class EnemyBase : MonoBehaviour
         Vector3 position = transform.position;
         position.y += 0.1f;
         GameManager.Instance.AddScore(data.score, position);
+        int random = Random.Range(0, 10);
+        print(random);
+        if (random < 1)
+            Instantiate(data.prefab, transform.position, Quaternion.identity);
     }
 
     protected virtual void OnDie()

@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
     public GlobalInt currentScore;
     public GlobalInt playerLife;
 
-
     public Action OnUpdateScore;
     public Action OnPlayerDamage;
+    public Action OnPlayerHeal;
     public Action OnPowerUp;
     public Action OnPowerDown;
     public Action OnPlayerDie;
@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
         OnPlayerDamage?.Invoke();
 
         PlayerDie();
+
+    }
+    public void AddLife()
+    {
+        OnPlayerHeal?.Invoke();
 
     }
 

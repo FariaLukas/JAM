@@ -21,4 +21,7 @@ public class EnemyData : ScriptableObject
     public string speedTrigger = "Speed";
     public string dieTrigger = "Die";
 
+    [Header("Life")]
+    public GameObject prefab;
+
 }

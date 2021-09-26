@@ -28,6 +28,9 @@ public class Health : MonoBehaviour
     private Color _inicialColor;
     private bool _canTakeDamage = true;
     private Animator _animator;
+    public float initialLife { get; set; }
+    private int _invulnerableLayer = 12;
+    private PlayerControll _playerControll;
 
     private bool HasInvencibility()
     {
@@ -43,6 +46,7 @@ public class Health : MonoBehaviour
         if (invencibilityTime == 0)
             hitColor = _inicialColor;
         _animator = GetComponent<Animator>();
+        _playerControll = GetComponent<PlayerControll>();
     }
 
 
@@ -55,6 +59,7 @@ public class Health : MonoBehaviour
     public void SetInitialLife(float life)
     {
         currentLife = life;
+        initialLife = life;
         _canTakeDamage = true;
     }
 
@@ -75,6 +80,15 @@ public class Health : MonoBehaviour
         StartCoroutine(WaitToTakeDamage());
     }
 
+    public void AddHealth(int heal)
+    {
+        if (currentLife == initialLife) return;
+
+        currentLife += heal;
+
+        GameManager.Instance.AddLife();
+    }
+
     [Button]
     public virtual void Kill()
     {
@@ -87,13 +101,16 @@ public class Health : MonoBehaviour
     }
     private void Killling()
     {
-
         gameObject.SetActive(false);
+
     }
 
     private Tween BlinkAnimation(Color endValue, float duration, int loop)
     {
         float timer = (float)duration / loop * 2;
+        
+        if (_playerControll)
+            _playerControll.Animator("Hit");
 
         _render.DOKill();
         _render.color = _inicialColor;
@@ -102,9 +119,12 @@ public class Health : MonoBehaviour
 
     IEnumerator WaitToTakeDamage()
     {
+        int layer = gameObject.layer;
+        gameObject.layer = _invulnerableLayer;
 
         yield return BlinkAnimation(hitColor, invencibilityTime, hitTime).WaitForCompletion();
 
+        gameObject.layer = layer;
         _canTakeDamage = true;
     }
 }

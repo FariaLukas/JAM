@@ -24,6 +24,7 @@ public class UpdateUI : MonoBehaviour
     {
         GameManager.Instance.OnUpdateScore += UpdateDisplay;
         GameManager.Instance.OnPlayerDamage += UpdateLife;
+        GameManager.Instance.OnPlayerHeal += UpdateLife;
 
         _playerHealth = FindObjectOfType<PlayerControll>().GetComponent<Health>();
 
