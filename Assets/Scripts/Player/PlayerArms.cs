@@ -24,21 +24,21 @@ public class PlayerArms : MonoBehaviour
         _collider2d = GetComponent<BoxCollider2D>();
     }
     private void Update()
-    {
-
-       
+    {    
         if (transform.parent != null)
             _throwArm = true;
 
+        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.DrawLine(transform.position, _mousePos);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, _mousePos);
         if (Input.GetMouseButton(keyboard))
-        {
-           
+        {   
             _throwArm = false;
             _timeHold += Time.deltaTime;
         }
         if (Input.GetMouseButtonUp(keyboard))
         {
-            _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             Throw(Calculate(_timeHold));
         }
     }
@@ -54,12 +54,13 @@ public class PlayerArms : MonoBehaviour
     {
         if (!_throwArm)
             return;
-
-        
         _rigidbody2D.isKinematic = false;
         transform.parent = null;
-        velocit = new Vector2(_mousePos.x * force, _mousePos.y * force);
-        _rigidbody2D.velocity = new Vector2(velocit.x, velocit.y);      
+        velocit = new Vector2(_mousePos.x, _mousePos.y);
+
+        transform.up = (Vector3)_mousePos - transform.position;
+        _rigidbody2D.AddForce(transform.up * force);
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -70,8 +71,10 @@ public class PlayerArms : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             gameObject.layer = 6;
-            transform.SetParent(armPosition.transform);
-            transform.position = armPosition.transform.position;
+            transform.position = new Vector2(0, 0);
+            transform.rotation = collision.transform.rotation;
+            transform.SetParent(armPosition.transform,false);
+            Debug.Log(transform.position);
         }
         else if (collision.collider.tag == enemies &&
         collision.gameObject.TryGetComponent(out Health health))

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPosition: {fileID: 1898660239}
-  throwForce: 10
+  throwForce: 500
   timeToHold: 1
   keyboard: 0
   damage: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPosition: {fileID: 255370447}
-  throwForce: 10
+  throwForce: 500
   timeToHold: 1
   keyboard: 1
   damage: 0
