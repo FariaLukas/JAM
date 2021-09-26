@@ -16,6 +16,7 @@ public class PlayerControll : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         GameManager.Instance.OnPlayerDie += PlayerDied;
+        _animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -28,6 +29,8 @@ public class PlayerControll : MonoBehaviour
     {
         if (died) return;
         lockMoviment = block;
+        Move(Vector2.zero);
+        _animator.SetTrigger("Die");
     }
 
     public void PlayerDied()
@@ -41,8 +44,15 @@ public class PlayerControll : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float movey = Input.GetAxis("Vertical");
+        Mathf.Sin(moveX);
         _moveCharacter = new Vector2(moveX, movey);
+        _animator.SetFloat("Horizontal", Mathf.Sin(moveX));
         return _moveCharacter;
+    }
+
+    public void Animator(string name)
+    {
+        _animator.SetTrigger(name);
     }
     public void Move(Vector2 _moveCharacter)
     {

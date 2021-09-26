@@ -23,6 +23,7 @@ public class PlayerArms : MonoBehaviour
     public string enemies = "Enemy";
 
     [Header("Animation")]
+    private Animator _animator;
     public float duration = .3f;
     public Ease ease = Ease.OutBack;
 
@@ -33,6 +34,7 @@ public class PlayerArms : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collider2d = GetComponent<BoxCollider2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -73,6 +75,7 @@ public class PlayerArms : MonoBehaviour
         if (!_throwArm)
             return;
 
+        _animator.SetBool("Attack", true);
         _rigidbody2D.isKinematic = false;
         transform.parent = null;
         _velocit = new Vector2(_mousePos.x, _mousePos.y);
@@ -93,6 +96,7 @@ public class PlayerArms : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        _animator.SetBool("Attack", false);
         _timeHold = 0f;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
