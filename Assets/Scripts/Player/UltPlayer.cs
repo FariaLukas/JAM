@@ -17,22 +17,25 @@ public class UltPlayer : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Vector2 guardar;
     private bool _active = false;
+    private SpriteRenderer _spriteRenderer;
+    public Sprite _sprite;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         GameManager.Instance.OnPowerUp += Active;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Active()
     {
         if (_active) return;
-        playerControll._animator.enabled = false;
-        playerControll._spriteRenderer.sprite = playerControll.ultSprite;
+        _spriteRenderer.sprite = _sprite; 
+        playerControll._animator.SetBool("Ult", true);
         _active = true;
         guardar = transform.position;
         StartCoroutine(Return(_active));
-        playerControll.SetLock(true);
+        playerControll.lockMoviment = true;
         playerControll.Move(Vector2.zero);
         AddForce();
 
@@ -51,15 +54,15 @@ public class UltPlayer : MonoBehaviour
 
     private void Test()
     {
-        playerControll._spriteRenderer.sprite = playerControll.oldSprite;
-        playerControll._animator.enabled = true;
+        _spriteRenderer.sprite = null;
+        playerControll._animator.SetBool("Ult", false);
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
         Sequence s = DOTween.Sequence();
         s.Append(transform.DOMove(guardar, duration).SetEase(ease));
         s.Join(transform.DORotate(Vector3.zero, duration)).OnComplete(() => transform.rotation = Quaternion.Euler(0, 0, 0));
         _rigidbody2D.angularVelocity = 0f;
-        playerControll.SetLock(false);
+        playerControll.lockMoviment = false;
         _active = false;
         GameManager.Instance.PowerDown();
     }
