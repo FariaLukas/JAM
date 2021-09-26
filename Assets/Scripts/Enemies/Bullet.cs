@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     public virtual void StartProjectile(Transform target, float damage)
     {
         _damage = damage;
-
+        _bulletRigidbody.transform.rotation = target.rotation;
         _bulletRigidbody.AddForce(target.up * speed, ForceMode2D.Impulse);
 
     }

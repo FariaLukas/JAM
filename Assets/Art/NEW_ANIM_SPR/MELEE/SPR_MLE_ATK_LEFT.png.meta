@@ -135,10 +135,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 16
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 32
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_3
       rect:
         serializedVersion: 2
-        x: 90
+        x: 48
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_4
       rect:
         serializedVersion: 2
-        x: 120
+        x: 64
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_5
       rect:
         serializedVersion: 2
-        x: 150
+        x: 80
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_6
       rect:
         serializedVersion: 2
-        x: 180
+        x: 96
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,12 +280,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_7
       rect:
         serializedVersion: 2
-        x: 210
+        x: 112
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,12 +301,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_8
       rect:
         serializedVersion: 2
-        x: 240
+        x: 128
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_9
       rect:
         serializedVersion: 2
-        x: 270
+        x: 144
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_10
       rect:
         serializedVersion: 2
-        x: 300
+        x: 160
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,12 +364,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_11
       rect:
         serializedVersion: 2
-        x: 330
+        x: 176
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,12 +385,12 @@ TextureImporter:
       name: SPR_MLE_ATK_LEFT_12
       rect:
         serializedVersion: 2
-        x: 360
+        x: 192
         y: 0
-        width: 30
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

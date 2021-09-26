@@ -10,12 +10,18 @@ public class EnemyBase : MonoBehaviour
     public Health health { get; set; }
     protected NavMeshAgent agent;
     protected PlayerControll player;
-    protected Health _playerHealth;
+    protected Health playerHealth;
+    protected Animator animator;
 
     private void Awake()
     {
         Init();
 
+    }
+
+    private void OnEnable()
+    {
+        Init();
     }
 
     protected virtual void Init()
@@ -26,7 +32,7 @@ public class EnemyBase : MonoBehaviour
 
         player = FindObjectOfType<PlayerControll>();
         if (player)
-            _playerHealth = player.GetComponent<Health>();
+            playerHealth = player.GetComponent<Health>();
 
         agent.speed = data.speed;
         agent.stoppingDistance = data.range;
@@ -34,6 +40,8 @@ public class EnemyBase : MonoBehaviour
         health = GetComponent<Health>();
         health.SetInitialLife(data.initialLife);
         health.OnKill += AddScore;
+
+        animator = GetComponent<Animator>();
 
     }
 
@@ -43,9 +51,22 @@ public class EnemyBase : MonoBehaviour
 
     }
 
+    protected virtual void Update()
+    {
+        if (player)
+        {
+            float side = transform.position.x > player.transform.position.x ? -1 : 1;
+            if (animator)
+                animator.SetFloat(data.speedTrigger, side);
+
+        }
+
+    }
+
     public virtual void Attack()
     {
-
+        if (animator)
+            animator.SetTrigger(data.attackTrigger);
     }
 
     public virtual void Stopped()
@@ -73,7 +94,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (other.gameObject == player.gameObject)
         {
-            _playerHealth.Damage(data.fisicalDamage);
+            if (playerHealth)
+                playerHealth.Damage(data.fisicalDamage);
 
 
         }

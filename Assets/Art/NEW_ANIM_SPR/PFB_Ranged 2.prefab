@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688156390167157969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: -0.127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1688156388676124192}
@@ -204,8 +204,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.2236116, g: 0.51573104, b: 0.7075472, a: 1}
+  m_Sprite: {fileID: 6189005133408842456, guid: 431f932e675b63141a1104ac9ab064bb, type: 3}
+  m_Color: {r: 0.6651887, g: 0.4481132, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050dc0a894f07b944a74e928d81c220d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3057660505359048076, guid: 3b2262abd48332e47920f329058170f5, type: 3}
+  prefab: {fileID: 3057660505359048076, guid: d4002548cf4964b4bac3172336e11f8e, type: 3}
   poolSize: 6
 --- !u!114 &7474905579370386266
 MonoBehaviour:
@@ -367,7 +367,7 @@ Animator:
   m_GameObject: {fileID: 7474905579370386252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 907ef886dfaa3cb448aba53ecee25af6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -173,14 +173,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17, y: 11}
+    oldSize: {x: 30, y: 18}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17, y: 11}
+  m_Size: {x: 30, y: 18}
   m_EdgeRadius: 0
 --- !u!114 &199120422
 MonoBehaviour:
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 5a5f04668bbfe8b4b8b05b3904986761, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f151a8f940abba40a464c8bbc95ce54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -623,7 +623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1834882200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,10 +637,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melees:
-  - prefab: {fileID: 4443090012081223678, guid: 16f6c6819f051bb44906e6c10bc6c712, type: 3}
+  - prefab: {fileID: 4443090012081223678, guid: 4a1001bd2442ec745a6b70910f8bc9d4, type: 3}
     poolSize: 3
     pool: {fileID: 0}
-  - prefab: {fileID: 4443090012081223678, guid: 1ea70371e50fc0046bf50e88bced3eeb, type: 3}
+  - prefab: {fileID: 4443090012081223678, guid: 2f2ce86c099b3fe4282dce5ac966e925, type: 3}
     poolSize: 3
     pool: {fileID: 0}
   rangeds:

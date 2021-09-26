@@ -21,18 +21,20 @@ public class Weapon : MonoBehaviour
         ratio = r;
     }
 
-    public virtual void Shoot(Transform target, float damage)
+    public virtual void Shoot(Transform target, float damage, Animator anim, string trigger)
     {
         if (_delay <= 0)
         {
             _delay = ratio;
+
+            anim.SetTrigger(trigger);
 
             _muzzleParent.transform.up = target.position - transform.position;
 
             foreach (var m in muzzles)
             {
                 GameObject bullet = _pool.GetPooledGameObject();
-                bullet.transform.position = transform.position;
+                bullet.transform.position = _muzzleParent.position;
                 bullet.SetActive(true);
 
                 if (bullet.TryGetComponent(out Bullet b))

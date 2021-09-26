@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ANIM_MELEE_WALK1
+  m_Name: ANIM_MELEE_WALK_RIGHT
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -26,6 +26,8 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: 2388877981835719991, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
     - time: 0.5
+      value: {fileID: -4114094035604990444, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
+    - time: 0.5833333
       value: {fileID: -4114094035604990444, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
     attribute: m_Sprite
     path: 
@@ -50,12 +52,13 @@ AnimationClip:
     - {fileID: 4288579847094282078, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
     - {fileID: 2388877981835719991, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
     - {fileID: -4114094035604990444, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
+    - {fileID: -4114094035604990444, guid: f9236c9afc5841f4abd3a17d198f1df4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

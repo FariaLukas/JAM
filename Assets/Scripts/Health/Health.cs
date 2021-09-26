@@ -71,7 +71,7 @@ public class Health : MonoBehaviour
     }
     private void Killling()
     {
-        print("AAAAA");
+
         gameObject.SetActive(false);
     }
 

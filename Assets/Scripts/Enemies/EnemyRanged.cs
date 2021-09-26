@@ -15,8 +15,7 @@ public class EnemyRanged : EnemyBase
 
     public override void Attack()
     {
-        base.Attack();
         if (player)
-            weapon.Shoot(player.transform, data.damage);
+            weapon.Shoot(player.transform, data.damage, animator, data.attackTrigger);
     }
 }
