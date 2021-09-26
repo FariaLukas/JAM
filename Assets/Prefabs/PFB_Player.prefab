@@ -316,7 +316,7 @@ MonoBehaviour:
   throwForce: 500
   timeToHold: 1
   keyboard: 0
-  damage: 0
+  damage: 1
   enemies: Enemy
 --- !u!1 &1898660239
 GameObject:
@@ -497,7 +497,7 @@ MonoBehaviour:
   throwForce: 500
   timeToHold: 1
   keyboard: 1
-  damage: 0
+  damage: 1
   enemies: Enemy
 --- !u!1 &8451177601307633635
 GameObject:
@@ -662,11 +662,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 3
-  invencibilityTime: 1.5
+  deathParameter: Die
   deathColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0.2
   deathFeedback: 4
-  hitColor: {r: 0, g: 1, b: 1, a: 0.62352943}
+  invencibilityTime: 0.5
+  hitColor: {r: 0, g: 1, b: 1, a: 0.39607844}
   hitTime: 4
 --- !u!95 &8451177601331125724
 Animator:
@@ -678,7 +679,7 @@ Animator:
   m_GameObject: {fileID: 8451177601307633635}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 151ed58b20977ff47b32c4366d0138bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

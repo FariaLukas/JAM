@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
             if (other.TryGetComponent(out Health health))
             {
                 health.Damage(_damage);
+                GameManager.Instance.PlayerDamage();
             }
 
             Disable();

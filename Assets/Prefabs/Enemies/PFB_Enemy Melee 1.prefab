@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3624209466505479949}
   m_Layer: 9
   m_Name: PFB_Enemy Melee 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,10 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 0
-  invencibilityTime: 0
+  deathParameter: Die
   deathColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0.2
   deathFeedback: 4
+  invencibilityTime: 0
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   hitTime: 4
 --- !u!61 &4443090012081223665

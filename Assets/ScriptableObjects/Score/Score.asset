@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   description: 
-  value: 0
+  value: 400

@@ -97,13 +97,17 @@ public class EnemyBase : MonoBehaviour
 
     private void AddScore()
     {
-        GameManager.Instance.AddScore(data.score);
+        Vector3 position = transform.position;
+        position.y += 0.1f;
+        GameManager.Instance.AddScore(data.score, position);
     }
 
     protected virtual void OnDie()
     {
-        AddScore();
+        if (!dead)
+            AddScore();
         dead = true;
+        Stopped();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -111,8 +115,10 @@ public class EnemyBase : MonoBehaviour
         if (other.gameObject == player.gameObject)
         {
             if (playerHealth)
+            {
                 playerHealth.Damage(data.fisicalDamage);
-
+                GameManager.Instance.PlayerDamage();
+            }
 
         }
     }

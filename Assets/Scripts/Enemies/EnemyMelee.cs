@@ -9,8 +9,13 @@ public class EnemyMelee : EnemyBase
     public override void Attack()
     {
         base.Attack();
+
+        if (dead) return;
         if (playerHealth)
+        {
             playerHealth.Damage(data.damage);
+            GameManager.Instance.PlayerDamage();
+        }
 
     }
 

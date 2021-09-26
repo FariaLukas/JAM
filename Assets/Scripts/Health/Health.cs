@@ -60,11 +60,12 @@ public class Health : MonoBehaviour
 
     public virtual void Damage(float damage)
     {
+
         if (!_canTakeDamage) return;
 
-        currentLife -= damage;
-
         _canTakeDamage = false;
+
+        currentLife -= damage;
 
         if (currentLife <= 0)
         {
