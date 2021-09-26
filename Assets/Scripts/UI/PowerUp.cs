@@ -16,6 +16,8 @@ public class PowerUp : MonoBehaviour
     public float releaseDuration = 3f;
     public Ease ease = Ease.InExpo;
 
+    public GameObject feedack;
+
     private float _currentPower;
     private float _oldPoints;
     private bool _block;
@@ -42,7 +44,8 @@ public class PowerUp : MonoBehaviour
 
         if (_currentPower >= maxPower)
         {
-            GameManager.Instance.PowerUp();
+            GameManager.Instance.canActivePowerUp = true;
+            feedack.SetActive(true);
             _block = true;
         }
 
@@ -64,7 +67,7 @@ public class PowerUp : MonoBehaviour
     private void ActivePowerCount()
     {
         _block = false;
-        
+
         _currentPower = 0;
 
 

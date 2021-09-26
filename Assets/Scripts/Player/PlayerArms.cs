@@ -15,6 +15,8 @@ public class PlayerArms : MonoBehaviour
 
     public PlayerControll playerControll;
     public GameObject armPosition;
+    public GameObject feedback;
+    public ArmFeedback armFeedback;
     public float throwForce;
     public float timeToHold;
     public int keyboard;
@@ -47,6 +49,8 @@ public class PlayerArms : MonoBehaviour
         else
         {
             _throwArm = true;
+            float amout = Calculate(_timeHold) / throwForce;
+            armFeedback.UpdateFill(amout);
         }
 
         _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -56,6 +60,7 @@ public class PlayerArms : MonoBehaviour
         {
             _throwArm = false;
             _timeHold += Time.deltaTime;
+
         }
         if (Input.GetMouseButtonUp(keyboard))
         {
@@ -86,13 +91,14 @@ public class PlayerArms : MonoBehaviour
         _rigidbody2D.AddForce(transform.up * force);
 
         _enableToDamage = true;
+        armFeedback.gameObject.SetActive(false);
         Invoke(nameof(EnableToCatch), timeToCatch);
     }
 
     private void EnableToCatch()
     {
         gameObject.layer = 8;
-
+        feedback.SetActive(true);
 
     }
 
@@ -110,7 +116,9 @@ public class PlayerArms : MonoBehaviour
             transform.position = new Vector2(0, 0);
             transform.rotation = collision.transform.rotation;
             transform.SetParent(armPosition.transform, false);
+            feedback.SetActive(false);
             _enableToDamage = true;
+            armFeedback.gameObject.SetActive(true);
 
         }
         else if (collision.collider.tag == enemies &&

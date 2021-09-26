@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject addScorePFB;
     public GlobalInt currentScore;
     public GlobalInt playerLife;
+    public bool canActivePowerUp;
 
     public Action OnUpdateScore;
     public Action OnPlayerDamage;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void PowerUp()
     {
+        canActivePowerUp = false;
         OnPowerUp?.Invoke();
     }
 

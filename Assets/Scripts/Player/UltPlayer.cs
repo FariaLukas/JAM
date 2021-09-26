@@ -19,6 +19,7 @@ public class UltPlayer : MonoBehaviour
     private bool _active = false;
     private SpriteRenderer _spriteRenderer;
     public Sprite _sprite;
+    private bool _canActive;
 
     private void Start()
     {
@@ -26,18 +27,27 @@ public class UltPlayer : MonoBehaviour
         GameManager.Instance.OnPowerUp += Active;
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    private void Update()
+    {
 
+        if (Input.GetKeyDown(keyCode) && GameManager.Instance.canActivePowerUp)
+        {
+            if (_active) return;
+            GameManager.Instance.PowerUp();
+            _spriteRenderer.sprite = _sprite;
+            playerControll._animator.SetBool("Ult", true);
+            _active = true;
+            _canActive = false;
+            guardar = transform.position;
+            StartCoroutine(Return(_active));
+            playerControll.lockMoviment = true;
+            playerControll.Move(Vector2.zero);
+            AddForce();
+        }
+    }
     private void Active()
     {
-        if (_active) return;
-        _spriteRenderer.sprite = _sprite; 
-        playerControll._animator.SetBool("Ult", true);
-        _active = true;
-        guardar = transform.position;
-        StartCoroutine(Return(_active));
-        playerControll.lockMoviment = true;
-        playerControll.Move(Vector2.zero);
-        AddForce();
+        _canActive = true;
 
     }
 
