@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Action OnPowerUp;
     public Action OnPowerDown;
     public Action OnPlayerDie;
+    public Action OnChange;
     private float xspot, yspot;
 
     private void Awake()

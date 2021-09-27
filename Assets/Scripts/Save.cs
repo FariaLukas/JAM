@@ -5,7 +5,7 @@ using UnityEngine;
 public class Save : MonoBehaviour
 {
     public static Save Instance;
-    public string highScoreKey;
+    public string highScoreKey = "HighScore";
     public int highScoreValue { get; set; }
     public int oldHighScore { get; private set; }
 

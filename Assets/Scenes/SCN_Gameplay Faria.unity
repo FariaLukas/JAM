@@ -2627,14 +2627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4606594779757065910, guid: 08067b12079ece042b84b3307e269610, type: 3}
-      propertyPath: spawnRatio
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4606594779757065910, guid: 08067b12079ece042b84b3307e269610, type: 3}
-      propertyPath: startEnabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6934699481722494067, guid: 08067b12079ece042b84b3307e269610, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.5999985
