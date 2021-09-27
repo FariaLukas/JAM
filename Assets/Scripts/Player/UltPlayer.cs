@@ -15,6 +15,7 @@ public class UltPlayer : MonoBehaviour
     public Ease ease = Ease.InBack;
     public float cameraDuration = 3, cameraStrenght = 3;
     public int cameraVirato = 10;
+    public AUDIO aUDIO;
 
     [Header("Damgae")]
     public float damage = 1;
@@ -56,6 +57,7 @@ public class UltPlayer : MonoBehaviour
             playerControll.Move(Vector2.zero);
             AddForce();
             _pHealth.SetDamagable(false);
+            aUDIO.PLAy();
         }
     }
 

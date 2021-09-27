@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
     public float initialLife { get; set; }
     private int _invulnerableLayer = 12;
     private PlayerControll _playerControll;
+    private AUDIO aUDIO;
 
     private bool HasInvencibility()
     {
@@ -47,6 +48,9 @@ public class Health : MonoBehaviour
             hitColor = _inicialColor;
         _animator = GetComponent<Animator>();
         _playerControll = GetComponent<PlayerControll>();
+
+        if (_playerControll)
+            aUDIO = GetComponent<AUDIO>();
     }
 
 
@@ -68,13 +72,17 @@ public class Health : MonoBehaviour
         if (!_canTakeDamage) return;
         if (canPrint)
             print("A + " + damage + " : " + g.name);
-            
+
         _canTakeDamage = false;
 
         currentLife -= damage;
 
         if (_playerControll)
+        {
             _playerControll.Animator("Hit");
+            aUDIO.PLAy();
+        }
+
 
         if (currentLife <= 0)
         {

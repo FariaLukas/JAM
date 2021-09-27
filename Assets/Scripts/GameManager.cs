@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GlobalInt playerLife;
     public bool canActivePowerUp;
     public Texture2D cursor;
+    public AUDIO aUDIO;
 
     public Action OnUpdateScore;
     public Action OnPlayerDamage;
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
         if (playerLife.value <= 0)
         {
             OnPlayerDie?.Invoke();
+            aUDIO.PLAy();
         }
     }
 

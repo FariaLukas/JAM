@@ -20,6 +20,7 @@ public class PlayerArms : MonoBehaviour
     public float throwForce;
     public float timeToHold;
     public int keyboard;
+    public AUDIO catchARM;
 
     [Header("Damgae")]
     public float damage;
@@ -32,6 +33,7 @@ public class PlayerArms : MonoBehaviour
 
     [Header("Collect")]
     public float timeToCatch = 0.3f;
+    private AUDIO aUDIO;
 
     private void Start()
     {
@@ -100,6 +102,7 @@ public class PlayerArms : MonoBehaviour
         _enableToDamage = true;
         armFeedback.gameObject.SetActive(false);
         Invoke(nameof(EnableToCatch), timeToCatch);
+        aUDIO.PLAy();
     }
 
     private void EnableToCatch()
@@ -126,6 +129,7 @@ public class PlayerArms : MonoBehaviour
             feedback.SetActive(false);
             _enableToDamage = true;
             armFeedback.gameObject.SetActive(true);
+            catchARM.PLAy();
 
         }
         else if (collision.collider.tag == enemies &&
