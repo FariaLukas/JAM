@@ -21,7 +21,6 @@ public class AudioSourcePersistent : MonoBehaviour
 
     public void InMenu(bool a)
     {
-        print(a);
         menu.SetActive(a);
         gameplay.SetActive(!a);
         source.enabled = false;

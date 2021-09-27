@@ -41,6 +41,7 @@ public class PlayerArms : MonoBehaviour
         _collider2d = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
         GameManager.Instance.OnPlayerDie += PlayerDeath;
+        aUDIO = GetComponent<AUDIO>();
     }
 
     private void PlayerDeath()
@@ -48,7 +49,7 @@ public class PlayerArms : MonoBehaviour
         gameObject.SetActive(false);
         armFeedback.gameObject.SetActive(false);
     }
-    
+
     private void Update()
     {
         if (transform.parent == null)
@@ -101,6 +102,7 @@ public class PlayerArms : MonoBehaviour
 
         _enableToDamage = true;
         armFeedback.gameObject.SetActive(false);
+        feedback.SetActive(true);
         Invoke(nameof(EnableToCatch), timeToCatch);
         aUDIO.PLAy();
     }
@@ -108,7 +110,7 @@ public class PlayerArms : MonoBehaviour
     private void EnableToCatch()
     {
         gameObject.layer = 8;
-        feedback.SetActive(true);
+
 
     }
 

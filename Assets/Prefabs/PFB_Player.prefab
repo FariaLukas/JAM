@@ -257,7 +257,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 22ce430399da8274db9e795cb3aee83e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -282,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00048695505, y: -0.0015361328}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -293,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.375, y: 0.0625}
+  m_Size: {x: 0.42274132, y: 0.105592534}
   m_EdgeRadius: 0
 --- !u!50 &1891252822
 Rigidbody2D:
@@ -579,7 +579,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 22ce430399da8274db9e795cb3aee83e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -604,7 +604,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00048695505, y: -0.0015361328}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -615,7 +615,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.375, y: 0.0625}
+  m_Size: {x: 0.42274132, y: 0.105592534}
   m_EdgeRadius: 0
 --- !u!50 &2036422649
 Rigidbody2D:
@@ -973,7 +973,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.75
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5962,7 +5962,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.75
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7159,12 +7159,12 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.56078434, g: 0.5921569, b: 0.2901961, a: 0}
-        key1: {r: 0.5092276, g: 0.5660378, b: 0.0026699959, a: 0.6167713}
-        key2: {r: 0.56078434, g: 0.5921569, b: 0.2901961, a: 1}
-        key3: {r: 0, g: 0, b: 0, a: 0.70980394}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.56078434, g: 0.5921569, b: 0.2901961, a: 1}
+        key1: {r: 0.5092276, g: 0.5660378, b: 0.0026699959, a: 0.21657832}
+        key2: {r: 0.56078434, g: 0.5921569, b: 0.2901961, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0.6167713}
+        key4: {r: 0, g: 0, b: 0, a: 1}
+        key5: {r: 0, g: 0, b: 0, a: 0.70980394}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
@@ -7175,17 +7175,17 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
-        atime1: 25250
-        atime2: 32189
-        atime3: 38743
-        atime4: 65535
-        atime5: 0
-        atime6: 0
+        atime0: 193
+        atime1: 12143
+        atime2: 14071
+        atime3: 25250
+        atime4: 32189
+        atime5: 38743
+        atime6: 65535
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 3
-        m_NumAlphaKeys: 5
+        m_NumAlphaKeys: 7
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10832,7 +10832,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10974,7 +10974,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
