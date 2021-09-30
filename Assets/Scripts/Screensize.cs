@@ -7,7 +7,7 @@ public class Screensize : MonoBehaviour
 
     void Start()
     {
-        Screen.SetResolution(1440, 864, false);
+       // Screen.SetResolution(1440, 864, false);
     }
 
 

@@ -17,7 +17,7 @@ public class WinReward : MonoBehaviour
 
         foreach (var r in rewards)
         {
-            if (r.scoreToShow >= Save.Instance.highScoreValue)
+            if (Save.Instance.highScoreValue >= r.scoreToShow)
                 _currentScore = r.scoreToShow;
         }
 
